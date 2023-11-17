@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Acelerometro : MonoBehaviour
 {
+    [SerializeField] private TMP_Text inputX;
+    [SerializeField] private TMP_Text inputY;
     private Rigidbody2D rb;
-    private Vector2 tilt;
-    private bool isFlat = true;
+    private float dirX;
+    private float dirY;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float deadZone;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,17 +21,37 @@ public class Acelerometro : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 inputAccel = Input.acceleration;
+        dirX = CorrecaoDeadZone(Input.acceleration.x) * moveSpeed;
+        dirY = CorrecaoDeadZone(Input.acceleration.y) * moveSpeed;
 
-        if(isFlat )
-        {
-            inputAccel = Quaternion.Euler(90,0,0) * inputAccel;
+        //transform.position = 
+        AtualizarInput();
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(dirX, dirY);
+    }
+
+    private void AtualizarInput()
+    {
+        inputX.text = "X: " + dirX;
+        inputY.text = "Y: " + dirY;
+    }
+
+    private float CorrecaoDeadZone(float valor)
+    {
+        int sinal = 1;
+        if(valor < 0) {
+            sinal = -1;
         }
 
-        tilt.x = inputAccel.x;
-        tilt.y = inputAccel.y;
+        float valorFinal = Mathf.Abs(valor);
+        if(valorFinal < deadZone){
+            valorFinal = 0;
+        }
 
-        rb.AddForce(tilt);
-        Debug.DrawRay(transform.position + Vector3.up,tilt,Color.cyan);
+        return valorFinal * sinal;
+
     }
 }
