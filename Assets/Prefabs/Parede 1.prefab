@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8607428301155800151}
   - component: {fileID: 8332112742027351791}
   m_Layer: 0
-  m_Name: Parede
+  m_Name: Parede 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
