@@ -66,5 +66,10 @@ public class Cronometro : MonoBehaviour
         isCounting = false;
     }
 
+    public float TempoFinal()
+    {
+        return tempoContador;
+    }
+
 
 }

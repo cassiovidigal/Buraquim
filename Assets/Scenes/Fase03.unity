@@ -3022,6 +3022,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3777313859164566583, guid: a5fcc1203d143be49bc12c33e14ed477, type: 3}
+      propertyPath: idCena
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777313859164566583, guid: a5fcc1203d143be49bc12c33e14ed477, type: 3}
       propertyPath: proximaFase
       value: Fase04
       objectReference: {fileID: 0}

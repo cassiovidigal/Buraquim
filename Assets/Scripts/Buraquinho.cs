@@ -8,6 +8,7 @@ public class Buraquinho : MonoBehaviour
     private string pastaCenas = "Scenes/";
     private CircleCollider2D circleCollider;
     [SerializeField] private string proximaFase;
+    [SerializeField] private int idCena;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,8 @@ public class Buraquinho : MonoBehaviour
     {
 
         Cronometro.InstanciaCronometro.PausarCronometro();
+        float tempoFinal = Cronometro.InstanciaCronometro.TempoFinal();
+        PreloadManager.InstanciaPreloadManager.SalvarTempoFase(idCena,tempoFinal);
         yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene(pastaCenas+proximaFase, LoadSceneMode.Single);
 

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PreloadManager : MonoBehaviour
 {
 
+    private float[] temposFases;
+
     private static PreloadManager _instanciaPreloadManager;
     [SerializeField] public static GameObject instanciaPreloadManager;
     public static PreloadManager InstanciaPreloadManager
@@ -30,6 +32,8 @@ public class PreloadManager : MonoBehaviour
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
+        temposFases = new float[10];
+
         SceneManager.LoadScene("Scenes/Fase01", LoadSceneMode.Single);
     }
 
@@ -37,5 +41,10 @@ public class PreloadManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SalvarTempoFase(int index, float tempo)
+    {
+        temposFases[index] = tempo;
     }
 }
