@@ -34,7 +34,7 @@ public class PreloadManager : MonoBehaviour
 
         temposFases = new float[10];
 
-        SceneManager.LoadScene("Scenes/Fase01", LoadSceneMode.Single);
+        SceneManager.LoadScene("Scenes/Fase0", LoadSceneMode.Single);
     }
 
     // Update is called once per frame
