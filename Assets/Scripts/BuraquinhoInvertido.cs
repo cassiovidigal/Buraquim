@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Buraquinho : MonoBehaviour
+public class BuraquinhoInvertido : MonoBehaviour
 {
     private string pastaCenas = "Scenes/";
     private CircleCollider2D circleCollider;
     [SerializeField] private string proximaFase;
     [SerializeField] private int idCena;
-    [SerializeField] private Acelerometro acelerometro;
+    [SerializeField] private AcelerometroInvertido acelerometro;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class Buraquinho : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,7 +31,7 @@ public class Buraquinho : MonoBehaviour
             EncerrarFase();
         }
     }
-    
+
     private void EncerrarFase()
     {
         StartCoroutine(EncerrarFaseCoroutine());
@@ -42,9 +42,9 @@ public class Buraquinho : MonoBehaviour
         acelerometro.PararBolinha();
         Cronometro.InstanciaCronometro.PausarCronometro();
         float tempoFinal = Cronometro.InstanciaCronometro.TempoFinal();
-        PreloadManager.InstanciaPreloadManager.SalvarTempoFase(idCena,tempoFinal);
+        PreloadManager.InstanciaPreloadManager.SalvarTempoFase(idCena, tempoFinal);
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene(pastaCenas+proximaFase, LoadSceneMode.Single);
+        SceneManager.LoadScene(pastaCenas + proximaFase, LoadSceneMode.Single);
 
     }
 }

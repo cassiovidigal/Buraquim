@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Acelerometro : MonoBehaviour
+public class Acelerometro : MonoBehaviour, IAcelerometro
 {
     [SerializeField] private TMP_Text inputX;
     [SerializeField] private TMP_Text inputY;
@@ -12,6 +12,7 @@ public class Acelerometro : MonoBehaviour
     private float dirY;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float deadZone;
+    private bool faseEncerrada = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,7 @@ public class Acelerometro : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(dirX, dirY);
+        MovimentacaoBolinha();
     }
 
     private void AtualizarInput()
@@ -53,5 +54,18 @@ public class Acelerometro : MonoBehaviour
 
         return valorFinal * sinal;
 
+    }
+
+    private void MovimentacaoBolinha()
+    {
+        if (!faseEncerrada)
+        {
+            rb.velocity = new Vector2(dirX, dirY);
+        }
+    }
+
+    public void PararBolinha()
+    {
+        faseEncerrada = true;
     }
 }

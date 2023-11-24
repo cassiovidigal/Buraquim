@@ -12,6 +12,7 @@ public class AcelerometroInvertido : MonoBehaviour
     private float dirY;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float deadZone;
+    private bool faseEncerrada = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,7 @@ public class AcelerometroInvertido : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(dirX, dirY);
+        MovimentacaoBolinha();
     }
 
     private void AtualizarInput()
@@ -54,5 +55,18 @@ public class AcelerometroInvertido : MonoBehaviour
 
         return valorFinal * sinal;
 
+    }
+
+    private void MovimentacaoBolinha()
+    {
+        if (!faseEncerrada)
+        {
+            rb.velocity = new Vector2(dirX, dirY);
+        }
+    }
+
+    public void PararBolinha()
+    {
+        faseEncerrada = true;
     }
 }

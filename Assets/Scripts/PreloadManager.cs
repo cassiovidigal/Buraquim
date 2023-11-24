@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PreloadManager : MonoBehaviour
 {
 
-    private float[] temposFases;
+    public float[] temposFases;
 
     private static PreloadManager _instanciaPreloadManager;
     [SerializeField] public static GameObject instanciaPreloadManager;

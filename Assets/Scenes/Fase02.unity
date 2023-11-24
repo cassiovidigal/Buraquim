@@ -2041,6 +2041,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82ea823bd20ab9b499457a8fe72bc3c0, type: 3}
+--- !u!114 &3663000497626538954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6303173521411642236, guid: 82ea823bd20ab9b499457a8fe72bc3c0, type: 3}
+  m_PrefabInstance: {fileID: 3663000497626538953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3161d74228b2934cae54f55e6770869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6426877793681977560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2198,6 +2209,10 @@ PrefabInstance:
       propertyPath: proximaFase
       value: Fase03
       objectReference: {fileID: 0}
+    - target: {fileID: 3777313859164566583, guid: a5fcc1203d143be49bc12c33e14ed477, type: 3}
+      propertyPath: acelerometro
+      value: 
+      objectReference: {fileID: 3663000497626538954}
     - target: {fileID: 3836057673581018959, guid: a5fcc1203d143be49bc12c33e14ed477, type: 3}
       propertyPath: m_Name
       value: Buraquinho
