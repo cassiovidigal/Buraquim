@@ -63,6 +63,10 @@ public class AcelerometroInvertido : MonoBehaviour
         {
             rb.velocity = new Vector2(dirX, dirY);
         }
+        else
+        {
+            rb.velocity = new Vector2(0, 0);
+        }
     }
 
     public void PararBolinha()

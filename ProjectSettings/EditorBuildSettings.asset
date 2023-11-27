@@ -44,9 +44,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Fim_fases.unity
     guid: ed2d7a86cdedd6446b94109a713edc7f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Labirinto01.unity
     guid: 19be40bd130433346aa1c21c9a9a9898
+  - enabled: 1
+    path: Assets/Scenes/Labirinto02.unity
+    guid: 3c0eb866e9b58ac4c8fa72e1f9b62b57
+  - enabled: 1
+    path: Assets/Scenes/Labirinto03.unity
+    guid: 75b261d8fea951b4c8143900b561f2cd
   - enabled: 0
     path: Assets/Scenes/SampleScene02.unity
     guid: 44f5e3aebcfb2bb4b8b516ce7f1e7fe6
