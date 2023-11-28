@@ -6,20 +6,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
-public class PlacarFinal : MonoBehaviour
+public class PlacarFinalLabirinto : MonoBehaviour
 {
     private float tempoFinal = 0;
     [SerializeField] private TMP_Text tempoFinalTexto;
     [SerializeField] private TMP_Text fase01;
     [SerializeField] private TMP_Text fase02;
     [SerializeField] private TMP_Text fase03;
-    [SerializeField] private TMP_Text fase04;
-    [SerializeField] private TMP_Text fase05;
-    [SerializeField] private TMP_Text fase06;
-    [SerializeField] private TMP_Text fase07;
-    [SerializeField] private TMP_Text fase08;
-    [SerializeField] private TMP_Text fase09;
-    [SerializeField] private TMP_Text fase10;
     [SerializeField] private Button botaoVoltar;
 
     // Start is called before the first frame update
@@ -38,7 +31,7 @@ public class PlacarFinal : MonoBehaviour
 
     private void TempoFinal()
     {
-        for(int i = 0; i < 10; i++)
+        for(int i = 10; i < 13; i++)
         {
             tempoFinal += PreloadManager.InstanciaPreloadManager.temposFases[i];
         }
@@ -48,16 +41,9 @@ public class PlacarFinal : MonoBehaviour
 
     private void PlacarFases()
     {
-        fase01.text = PreloadManager.InstanciaPreloadManager.temposFases[0] + "";
-        fase02.text = PreloadManager.InstanciaPreloadManager.temposFases[1] + "";
-        fase03.text = PreloadManager.InstanciaPreloadManager.temposFases[2] + "";
-        fase04.text = PreloadManager.InstanciaPreloadManager.temposFases[3] + "";
-        fase05.text = PreloadManager.InstanciaPreloadManager.temposFases[4] + "";
-        fase06.text = PreloadManager.InstanciaPreloadManager.temposFases[5] + "";
-        fase07.text = PreloadManager.InstanciaPreloadManager.temposFases[6] + "";
-        fase08.text = PreloadManager.InstanciaPreloadManager.temposFases[7] + "";
-        fase09.text = PreloadManager.InstanciaPreloadManager.temposFases[8] + "";
-        fase10.text = PreloadManager.InstanciaPreloadManager.temposFases[9] + "";
+        fase01.text = PreloadManager.InstanciaPreloadManager.temposFases[10] + "";
+        fase02.text = PreloadManager.InstanciaPreloadManager.temposFases[11] + "";
+        fase03.text = PreloadManager.InstanciaPreloadManager.temposFases[12] + "";
     }
 
     public void VoltarMenuPrincipal()
