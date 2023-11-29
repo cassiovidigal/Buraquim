@@ -2207,6 +2207,7 @@ MonoBehaviour:
   fase01: {fileID: 494831315}
   fase02: {fileID: 2032288848}
   fase03: {fileID: 645057176}
+  botaoVoltar: {fileID: 794145764}
 --- !u!1 &1472925207
 GameObject:
   m_ObjectHideFlags: 0

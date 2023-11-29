@@ -3821,7 +3821,7 @@ MonoBehaviour:
   fase08: {fileID: 1381308845}
   fase09: {fileID: 951152249}
   fase10: {fileID: 1433579526}
-  botaoVoltar: {fileID: 0}
+  botaoVoltar: {fileID: 794145764}
 --- !u!4 &1407571282
 Transform:
   m_ObjectHideFlags: 0
