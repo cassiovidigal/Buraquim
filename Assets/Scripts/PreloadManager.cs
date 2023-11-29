@@ -32,7 +32,7 @@ public class PreloadManager : MonoBehaviour
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
-        temposFases = new float[10];
+        temposFases = new float[13];
 
         SceneManager.LoadScene("Scenes/Fase0", LoadSceneMode.Single);
     }
