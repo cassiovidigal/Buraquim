@@ -7,6 +7,7 @@ public class PreloadManager : MonoBehaviour
 {
 
     public float[] temposFases;
+    public int idUltimoLabirinto = 0;
 
     private static PreloadManager _instanciaPreloadManager;
     [SerializeField] public static GameObject instanciaPreloadManager;
@@ -46,5 +47,15 @@ public class PreloadManager : MonoBehaviour
     public void SalvarTempoFase(int index, float tempo)
     {
         temposFases[index] = tempo;
+    }
+
+    public void SetUltimoLabirinto(int id)
+    {
+        idUltimoLabirinto = id;
+    }
+
+    public int GetUltimoLabirinto()
+    {
+        return idUltimoLabirinto;
     }
 }
