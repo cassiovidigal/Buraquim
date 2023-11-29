@@ -10,9 +10,6 @@ public class PlacarFinalLabirinto : MonoBehaviour
 {
     private float tempoFinal = 0;
     [SerializeField] private TMP_Text tempoFinalTexto;
-    [SerializeField] private TMP_Text fase01;
-    [SerializeField] private TMP_Text fase02;
-    [SerializeField] private TMP_Text fase03;
     [SerializeField] private Button botaoVoltar;
 
     // Start is called before the first frame update
@@ -20,7 +17,6 @@ public class PlacarFinalLabirinto : MonoBehaviour
     {
         IniciarListenersBotoes();
         TempoFinal();
-        PlacarFases();
     }
 
     // Update is called once per frame
@@ -31,19 +27,10 @@ public class PlacarFinalLabirinto : MonoBehaviour
 
     private void TempoFinal()
     {
-        for(int i = 10; i < 13; i++)
-        {
-            tempoFinal += PreloadManager.InstanciaPreloadManager.temposFases[i];
-        }
+        int id = PreloadManager.InstanciaPreloadManager.GetUltimoLabirinto();
+        tempoFinal += PreloadManager.InstanciaPreloadManager.temposFases[id];
 
         tempoFinalTexto.text = tempoFinal + "";
-    }
-
-    private void PlacarFases()
-    {
-        fase01.text = PreloadManager.InstanciaPreloadManager.temposFases[10] + "";
-        fase02.text = PreloadManager.InstanciaPreloadManager.temposFases[11] + "";
-        fase03.text = PreloadManager.InstanciaPreloadManager.temposFases[12] + "";
     }
 
     public void VoltarMenuPrincipal()
